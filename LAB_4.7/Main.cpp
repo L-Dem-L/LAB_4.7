@@ -31,13 +31,13 @@ int main()
 		S = a;
 		do {
 			n++;
-			R = 1.0*((x*x)*((2*n-1)/(2*n+1)));
+			R = ((x*x)*((2*n-1.0)/(2*n+1.0)));
 			a *= R;
 			S += a;
 		} while (abs(a) >= eps);
 
 		cout << "|" << setw(7) << setprecision(2) << x << " |"
-			<< setw(10) << setprecision(5) << 0.5*((1+x)/(1-x)) << " |"
+			<< setw(10) << setprecision(5) << 0.5*log((1+x)/(1-x)) << " |"
 			<< setw(10) << setprecision(5) << S << " |"
 			<< setw(5) << n << " |"
 			<< endl;
